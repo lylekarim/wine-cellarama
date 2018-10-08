@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h1>My Profile Page</h1>
+        </div>
+        <button class="btn btn-lg btn-primary" id="logout">Logout</button>
+    </div>
+    <div class="container-fluid" id="profile-div">
+        <h4>My Profile Pic</h4>
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="form-group mb-2" id="image-div">
+                    <!-- image div to hold uploaded image -->
+                    <img id="profile-image" src="https://via.placeholder.com/150x150" />
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group mb-2" id="change-profile-image">
+                    <label for="change-profile-image">Change Profile Image</label>
+                    <input type="file" class="form-control-file" id="change-profile-image">
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <h4>My Credentials</h4>
+                <div class="form-group mb-2" id="username-create">
+                    <label for="username-input-create" class="sr-only">Username</label>
+                    <input type="text" class="form-control" id="username-input-create" placeholder="email@example.com">
+                </div>
+                <div class="form-group mb-2" id="password-create">
+                    <label for="password-input-create" class="sr-only">Password</label>
+                    <input type="password" class="form-control" id="password-input-create" placeholder="Password">
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <button type="submit" class="btn btn-lg btn-primary btn-block" id="reset-credentials">Reset
+                    Username/Password</button>
+            </div>
+        </div>
+        <h4>My Interests</h4>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="form-group mb-2" id="interests-color">
+                    <label for="select-wine-color">Select Wine Color: </label>
+                </div>
+                <div class="form-group mb-2" id="interests-color">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="">Red Wine</Option>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="">White Wine</Option>
+                    </label>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group mb-2" id="interests-type">
+                    <label for="select-wine-color">Select Wine Type: </label>
+                </div>
+                <div class="form-group mb-2" id="interests-chardonnay">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="">Chardonnay</Option>
+                    </label>
+                </div>
+                <div class="form-group mb-2" id="interests-pinot-grigio">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="">Pinot-Grigio</Option>
+                    </label>
+                </div>
+                <div class="form-group mb-2" id="interests-sauvignon-blanc">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="">Sauvignon Blanc</Option>
+                    </label>
+                </div>
+                <div class="form-group mb-2" id="interests-pinot-noir">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="">Pinot Noir</Option>
+                    </label>
+                </div>
+                <div class="form-group mb-2" id="interests-merlot">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="">Merlot</Option>
+                    </label>
+                </div>
+                <div class="form-group mb-2" id="interests-cabernet">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="">Cabernet Sauvignon</Option>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8" id="view-cellar"></div>
+            <div class="col-lg-4" id="view-graph"></div>
+        </div>
+    </div>
+</body>
+
+</html>

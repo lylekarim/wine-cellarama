@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../wine-cellar/assets/css/reset.css">
+    <meta charset="UTF-8">
+    <title>My Wine Cellar App</title>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../wine-cellar/assets/css/style.css">
+    <title>My Wine Cellar Web App</title>
+</head>
+
+<body>
+    <div id="sign-in-div">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <div class="form-group mb-2" id="username">
+            <label for="username-input" class="sr-only">Username</label>
+            <input type="text" class="form-control" id="username-input" placeholder="email@example.com" required>
+        </div>
+        <div class="form-group mb-2" id="password">
+            <label for="password-input" class="sr-only">Password</label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password" required>
+        </div>
+
+        <button type="submit" class="btn btn-lg btn-primary btn-block" id="sign-in">View My Cellar</button>
+        <button type="submit" class="btn btn-lg btn-primary btn-block" id="sign-in-google">Sign in with Google</button>
+        <button type="submit" class="btn btn-lg btn-primary btn-block" id="sign-in-facebook">Sign in with Facebook</button>
+        <p>Don't have an account?
+            <button class="btn btn-lg btn-primary btn-block" id="create-account-toggle">Create Account</button>
+        </p>
+
+    </div>
+    <div id="create-user-div">
+        <h1 class="h3 mb-3 font-weight-normal">Create an Account</h1>
+        <div class="form-group mb-2" id="users-name">
+            <label for="name-field" class="sr-only">Your Name</label>
+            <input type="text" class="form-control" id="name-field" placeholder="John Doe" required>
+        </div>
+        <div class="form-group mb-2" id="username-create">
+            <label for="username-input-create" class="sr-only">Username</label>
+            <input type="text" class="form-control" id="username-input-create" placeholder="email@example.com" required>
+        </div>
+        <div class="form-group mb-2" id="password-create">
+            <label for="password-input-create" class="sr-only">Password</label>
+            <input type="password" class="form-control" id="password-input-create" placeholder="Password" required>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block" id="create-user">Create My Cellar
+        </button>
+        <p>Already have an account?
+            <button class="btn btn-lg btn-primary btn-block" type="submit" id="sign-in-toggle">Sign in</button>
+        </p>
+    </div>
+
+
+    <div id="main-page">
+        <div class="container-fluid" id="header">
+            <div class="jumbotron">
+                <h1>My Wine Cellar</h1>
+            </div>
+            <button class="btn btn-lg btn-primary" id="logout">Logout</button>
+            <a href="profile.html"><button class="btn btn-lg btn-primary" id="profile">Profile</button></a>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h2>In My Cellar</h2>
+                    <div class="cellar-highlights">
+                        <table class="table table-sm table-hover table-striped" id='wine-table'>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Wine Name</th>
+                                    <th scope="col">Varietal</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rows-to-update">
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <a href="cellar.html"><button type="submit" class="btn btn-primary mb-2">View My Cellar</button></a>
+                </div>
+                <div class="col-md-8">
+                    <h3>Find Your Wine</h3>
+                    <form>
+                        <div class="form-row">
+                            <div class="col-6">
+                                <label for="input-wine-name">Name of Wine: </label>
+                                <input type="text" class="form-control" id="input-wine-name">
+                            </div>
+                            <div class="col-4">
+
+                                <label for="input-wine-color">Select wine color: </label>
+                                <select class="form-control" id="input-wine-color">
+                                    <option class="red">Red</option>
+                                    <option class="white">White</option>
+                                    <option class="rose">Rose</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button id="run-search" type="submit" class="btn btn-primary mb-2 mt-2">Search Wines</button>
+                        <hr>
+                    </form>
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Results</h2>
+                            <div id="wine-section" class="results-here">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Wine Name</th>
+                                            <th scope="col">Wine Vintage</th>
+                                            <th scope="col">Bottles</th>
+                                            <th scope="col">Add to Cellar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="wineReturned">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="assets/javascript/winesearch.js"></script>
+        <script>
+            localStorage.setItem("currentPage", "index");
+        </script>
+</body>
+
+</html>
