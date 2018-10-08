@@ -1,6 +1,6 @@
 # Wine Cellarama
 
-[link to Cellarama/](https://lylekarim.github.io/wine-cellar/)
+[link to Wine Cellarama/](https://lylekarim.github.io/wine-cellar/)
 
 ## What
 The Wine Cellar App is a web application that allows a user to create and catalog their wine into their very own wine cellar.  
